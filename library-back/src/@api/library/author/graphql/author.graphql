@@ -1,0 +1,88 @@
+
+type LibraryAuthor
+{
+    id: ID!
+    name: GraphQLString!
+    createdAt: GraphQLTimestamp
+    updatedAt: GraphQLTimestamp
+    deletedAt: GraphQLTimestamp
+}
+
+input LibraryCreateAuthorInput
+{
+    id: ID!
+    name: GraphQLString!
+}
+
+input LibraryUpdateAuthorByIdInput
+{
+    id: ID!
+    name: GraphQLString
+}
+
+input LibraryUpdateAuthorsInput
+{
+    id: ID
+    name: GraphQLString
+}
+
+type Query
+{
+    libraryFindAuthor(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): LibraryAuthor
+
+    libraryFindAuthorById(
+        id: ID
+        constraint: QueryStatement
+    ): LibraryAuthor
+
+    libraryGetAuthors(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [LibraryAuthor]!
+
+    libraryPaginateAuthors(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): Pagination!
+
+}
+
+type Mutation
+{
+    libraryCreateAuthor(
+        payload: LibraryCreateAuthorInput!
+    ): LibraryAuthor
+
+    libraryCreateAuthors(
+        payload: [LibraryCreateAuthorInput]!
+    ): Boolean!
+
+    libraryUpdateAuthorById(
+        payload: LibraryUpdateAuthorByIdInput!
+        constraint: QueryStatement
+    ): LibraryAuthor
+
+    libraryUpdateAuthors(
+        payload: LibraryUpdateAuthorsInput!
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [LibraryAuthor]!
+
+    libraryUpsertAuthor(
+        payload: LibraryUpdateAuthorByIdInput!
+    ): LibraryAuthor
+
+    libraryDeleteAuthorById(
+        id: ID!
+        constraint: QueryStatement
+    ): LibraryAuthor
+
+    libraryDeleteAuthors(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [LibraryAuthor]!
+
+}

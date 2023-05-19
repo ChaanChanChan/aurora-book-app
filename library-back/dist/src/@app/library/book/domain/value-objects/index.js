@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BookDeletedAt = exports.BookUpdatedAt = exports.BookCreatedAt = exports.BookAuthorId = exports.BookPrice = exports.BookPublishedAt = exports.BookTitle = exports.BookId = void 0;
+var book_id_1 = require("./book-id");
+Object.defineProperty(exports, "BookId", { enumerable: true, get: function () { return book_id_1.BookId; } });
+var book_title_1 = require("./book-title");
+Object.defineProperty(exports, "BookTitle", { enumerable: true, get: function () { return book_title_1.BookTitle; } });
+var book_published_at_1 = require("./book-published-at");
+Object.defineProperty(exports, "BookPublishedAt", { enumerable: true, get: function () { return book_published_at_1.BookPublishedAt; } });
+var book_price_1 = require("./book-price");
+Object.defineProperty(exports, "BookPrice", { enumerable: true, get: function () { return book_price_1.BookPrice; } });
+var book_author_id_1 = require("./book-author-id");
+Object.defineProperty(exports, "BookAuthorId", { enumerable: true, get: function () { return book_author_id_1.BookAuthorId; } });
+var book_created_at_1 = require("./book-created-at");
+Object.defineProperty(exports, "BookCreatedAt", { enumerable: true, get: function () { return book_created_at_1.BookCreatedAt; } });
+var book_updated_at_1 = require("./book-updated-at");
+Object.defineProperty(exports, "BookUpdatedAt", { enumerable: true, get: function () { return book_updated_at_1.BookUpdatedAt; } });
+var book_deleted_at_1 = require("./book-deleted-at");
+Object.defineProperty(exports, "BookDeletedAt", { enumerable: true, get: function () { return book_deleted_at_1.BookDeletedAt; } });
+//# sourceMappingURL=index.js.map

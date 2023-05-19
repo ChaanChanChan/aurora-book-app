@@ -1,0 +1,561 @@
+{
+    "info": {
+		"_postman_id"   : "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+		"name"          : "@app - library/book",
+		"schema"        : "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+			"name": "GraphQL - libraryCreateBook",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:LibraryCreateBookInput!)\n{\n\tlibraryCreateBook (payload:$payload)\n\t{\n\t\tid\n\t\ttitle\n\t\tpublishedAt\n\t\tprice\n\t\tauthorId\n\t}\n}",
+                        "variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"title\": \"735t73m4i78f9ny0egqj4y2p5gjfmitp78igrp8p1hqx1j4f2\", \n\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\"price\": 528494826, \n\t\t\"authorId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryCreateBooks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:[LibraryCreateBookInput]!)\n{\n\tlibraryCreateBooks (payload:$payload)\n}",
+						"variables": "{\n\t\"payload\":\n\t[\n\t\t{\n\t\t\t\"id\": \"fd73aa07-b1db-4631-8fa8-bd8525712b2a\", \n\t\t\t\"title\": \"q8aeuszlhhn72ubkzpifc7h5dujnzl3hm1c8hle3btxyhvj1z\", \n\t\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\t\"price\": 493017998, \n\t\t\t\"authorId\": \"5cc465f6-7d34-476a-8012-bf14156f0749\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"e7e520d9-cf05-42eb-adfc-b5759aa04ad0\", \n\t\t\t\"title\": \"h86mauuwdrsh2wrfox139yhqfasas1978se02n6oxid1sz2wk\", \n\t\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\t\"price\": 826987202, \n\t\t\t\"authorId\": \"9a4aa901-80da-4848-9bc9-46b82c897bdd\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"d48244a3-10cf-477f-ab3a-e08e7e4d6578\", \n\t\t\t\"title\": \"gc22ni35vlqn3cp03yoqgvy5us607ohebz75cg0n6aeczp09d\", \n\t\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\t\"price\": 181462841, \n\t\t\t\"authorId\": \"35dc2e3a-e483-494c-b318-ca74c51d2836\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"aab646e1-e8ff-4261-9862-6105b18d8a14\", \n\t\t\t\"title\": \"l98rar428vxyaqckm5vbdqrqkhu3uzrzx4wndstsost8px80s\", \n\t\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\t\"price\": 864138496, \n\t\t\t\"authorId\": \"b7c383b7-5f71-4be3-971a-e7e67dab4ae9\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"10d48850-85bb-41e4-bd05-e98cb01f9b71\", \n\t\t\t\"title\": \"83ic0k6oc85kha828lo3ym1jxef4vg103f9d3dotu9nfzc34m\", \n\t\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\t\"price\": 123343992, \n\t\t\t\"authorId\": \"5931932c-a897-439c-8ba9-e38e8611d22c\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"96e32204-271b-47e8-a7d2-ed922322be1f\", \n\t\t\t\"title\": \"wa9qkqkh957u05ghowmv9j4ipqvxzqiiyd4z92j6kq4qpwzob\", \n\t\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\t\"price\": 114107867, \n\t\t\t\"authorId\": \"f111e97e-43a2-4daf-9f95-6b724fca27bc\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"35c291d2-4a47-47c3-84ae-920e27cebe45\", \n\t\t\t\"title\": \"0wzlisk64bs4dt8tqk6nnp4dfmrc4fpsbafxliprqknwj90c7\", \n\t\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\t\"price\": 624594978, \n\t\t\t\"authorId\": \"920795ce-d378-4ebf-8884-c38950b35f5c\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"19b6a4d0-0945-4579-bb44-90b9f43e8b81\", \n\t\t\t\"title\": \"utcbc738efxhsjsherzszc4a1vsr22t6qqbi0honze4uiyecz\", \n\t\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\t\"price\": 827635173, \n\t\t\t\"authorId\": \"bb2310cf-78af-492b-9543-9d3e0d2a8db5\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"a66be46a-e8e3-4b4a-a104-15ed7b5903ad\", \n\t\t\t\"title\": \"8p2tq81losli2r2gjnk1g4777rnjjudowdo8in0fo9xmakg7y\", \n\t\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\t\"price\": 889311106, \n\t\t\t\"authorId\": \"8c2aaca1-d641-4d97-978a-154e490c9804\"\n\t\t}, \n\t\t{\n\t\t\t\"id\": \"256ee6c3-8e89-4b10-a986-1ce8b2cd837d\", \n\t\t\t\"title\": \"q0cfja65goonfphu436m9gl541srvhjhzmkakumdlp8iv06uf\", \n\t\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\t\"price\": 203205738, \n\t\t\t\"authorId\": \"8b5f90cb-efb8-4f69-bd31-8031f1dc4008\"\n\t\t}\n\t]\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryPaginateBooks",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement $constraint:QueryStatement)\n{\n\tlibraryPaginateBooks (query:$query constraint:$constraint)\n\t{\n\t\ttotal\n\t\tcount\n\t\trows\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryGetBooks",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tlibraryGetBooks (query: $query)\n\t{\n\t\tid\n\t\ttitle\n\t\tpublishedAt\n\t\tprice\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryFindBook",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($query:QueryStatement)\n{\n\tlibraryFindBook (query: $query)\n\t{\n\t\tid\n\t\ttitle\n\t\tpublishedAt\n\t\tprice\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryFindBookById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ($id:ID)\n{\n\tlibraryFindBookById (id:$id)\n\t{\n\t\tid\n\t\ttitle\n\t\tpublishedAt\n\t\tprice\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryUpdateBook",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($payload:LibraryUpdateBookInput!)\n{\n\tlibraryUpdateBook (payload:$payload)\n\t{\n\t\tid\n\t\ttitle\n\t\tpublishedAt\n\t\tprice\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"payload\":\n\t{\n\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\t\"title\": \"yivlr788ho5ei0xen498h1e5e13ii0q6bjzxubposhh8y6kum\", \n\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\"price\": 836010725, \n\t\t\"authorId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryDeleteBookById",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($id:ID!)\n{\n\tlibraryDeleteBookById (id:$id)\n\t{\n\t\tid\n\t\ttitle\n\t\tpublishedAt\n\t\tprice\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "GraphQL - libraryDeleteBooks",
+			"request": {
+				"method": "POST",
+				"header": [
+                ],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ($query:QueryStatement)\n{\n\tlibraryDeleteBooks (query: $query)\n\t{\n\t\tid\n\t\ttitle\n\t\tpublishedAt\n\t\tprice\n\t\tcreatedAt\n\t\tupdatedAt\n\t}\n}",
+						"variables": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}"
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/graphql",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/book/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"title\": \"g2wcokdjuwakxpcp5o67ua1by661f5gk5dittg7qm3ka2pg3e\", \n\t\"publishedAt\": \"2023-05-19\", \n\t\"price\": 625608720, \n\t\"authorId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/book/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"book",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/books/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key"   : "Content-Type",
+						"name"  : "Content-Type",
+						"type"  : "text",
+						"value" : "application/json"
+					}				],
+				"body": {
+					"mode"  : "raw",
+					"raw"   : "[\n\t{\n\t\t\"id\": \"67ff06fc-3869-4171-be98-7c4c6c61fab2\", \n\t\t\"title\": \"k2lebxc8mhym4tk11m1wvdq4h6zk3mwmpdhxouebde8jt2ecr\", \n\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\"price\": 371062545, \n\t\t\"authorId\": \"eeca425e-3161-4e24-83b4-18bf83422a7b\"\n\t}, \n\t{\n\t\t\"id\": \"bb611abe-1193-44b8-bea4-ce10098d316a\", \n\t\t\"title\": \"gvj4am0b7vctk55fifw8mtecvpncntw48ujicgsnibfill5uf\", \n\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\"price\": 678293542, \n\t\t\"authorId\": \"403382d9-97cc-43c2-8ec0-95afbbcd17f2\"\n\t}, \n\t{\n\t\t\"id\": \"5073743f-31b8-40dd-975b-57a2c5cc3ce8\", \n\t\t\"title\": \"gzd0y6enei7xxpf71w0bulincrz00jjnij12tksflej6ernw3\", \n\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\"price\": 474594362, \n\t\t\"authorId\": \"95d4218a-ad3c-4b13-9b84-7e07b9ec4c94\"\n\t}, \n\t{\n\t\t\"id\": \"a4dff01e-57d2-4cdf-b47d-30d26f4a3da0\", \n\t\t\"title\": \"bfrtv53v2wm7ac4su0y4teqj3y851gs040x31kt49cmzq3kr9\", \n\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\"price\": 589768391, \n\t\t\"authorId\": \"007a34ff-a838-4fee-8017-2c77929f0dd8\"\n\t}, \n\t{\n\t\t\"id\": \"20618fff-5547-4f05-ab39-b39c09232d6b\", \n\t\t\"title\": \"ulpkvahoz34e5m4usxyf5slvkvjbkgex3k3fny16ix3cg7tg9\", \n\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\"price\": 638285818, \n\t\t\"authorId\": \"b0f575b5-8942-4d9a-9b08-00361a472bae\"\n\t}, \n\t{\n\t\t\"id\": \"85091716-1b25-484a-8d81-fbffe143eb5c\", \n\t\t\"title\": \"0c2rnaezlj0271q0vohbz7a8a5jzt2dz06gmgo1vomwwizop7\", \n\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\"price\": 727886636, \n\t\t\"authorId\": \"b854c4d3-7b2a-48e0-ab41-40e263fd1002\"\n\t}, \n\t{\n\t\t\"id\": \"cf6030fe-43c0-4176-9919-1ad71252607e\", \n\t\t\"title\": \"ba8jt0knqkptu29e6gqcsf4a3batxcau9qvt46onxr3vggst1\", \n\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\"price\": 991986292, \n\t\t\"authorId\": \"16f356e6-cf72-4ed0-921e-9aff7cdd8589\"\n\t}, \n\t{\n\t\t\"id\": \"b31c5c47-a340-4c20-a99d-91732e84bf87\", \n\t\t\"title\": \"d3l598yhc7wrfs6cx5zix56opc3rwmxs4u6x37gmgc4ntgpze\", \n\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\"price\": 178355838, \n\t\t\"authorId\": \"1d1687d5-4d78-4497-b8f4-bedd59f17b1b\"\n\t}, \n\t{\n\t\t\"id\": \"cd34f62e-dbff-4ece-9464-f2ec9b860d37\", \n\t\t\"title\": \"vnmy2mz9gkc7q0r5bnxl30xc2ci7jhkpt535ym8yozjp974cz\", \n\t\t\"publishedAt\": \"2023-05-18\", \n\t\t\"price\": 818684081, \n\t\t\"authorId\": \"112e59db-7a4b-4e01-a279-bac1ee32f5f1\"\n\t}, \n\t{\n\t\t\"id\": \"1c1ffd7a-6d68-40f9-8baa-74131012697b\", \n\t\t\"title\": \"0pvdpswvgocsfn2gqhco8g7n265ljpalns1ibc5q350uq6n13\", \n\t\t\"publishedAt\": \"2023-05-19\", \n\t\t\"price\": 728070076, \n\t\t\"authorId\": \"093ba82f-e6ca-4c69-9139-c78e936d4b75\"\n\t}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/books/create",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"books",
+                        "create"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/books/paginate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"offset\": 0,\n\t\t\"limit\": 10\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/books/paginate",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+                        "books",
+                        "paginate"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/books/get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{ \n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/books/get",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"books",
+                        "get"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/book/find",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/book/find",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"book",
+                        "find"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/book/find/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/book/find/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"book",
+                        "find",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/book/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw"   : "{\n\t\"id\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\", \n\t\"title\": \"sqwns2kv6o70lplb4f6pnywsrtwp119qzztbx3sr93hpprvyj\", \n\t\"publishedAt\": \"2023-05-18\", \n\t\"price\": 200813763, \n\t\"authorId\": \"5b19d6ac-4081-573b-96b3-56964d5326a8\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/book/update",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"book",
+                        "update"
+					]
+				}
+			},
+			"response": []
+        },
+        {
+			"name": "REST - library/book/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/book/delete/5b19d6ac-4081-573b-96b3-56964d5326a8",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"book",
+                        "delete",
+						"5b19d6ac-4081-573b-96b3-56964d5326a8"
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "REST - library/books/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\":\n\t{\n\t\t\"where\":\n\t\t{\n\t\t\t\"id\":\n\t\t\t{\n\t\t\t\t\"[substring]\": \"\"\n\t\t\t}\n\t\t}\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/library/books/delete",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"library",
+						"books",
+                        "delete"
+					]
+				}
+			},
+			"response": []
+		}
+    ],
+    "variable": [
+		{
+			"id": "d9bc3afc-fd40-5505-b57f-8f5d5118e01b",
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

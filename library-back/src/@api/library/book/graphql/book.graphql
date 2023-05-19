@@ -1,0 +1,101 @@
+
+type LibraryBook
+{
+    id: ID!
+    title: GraphQLString!
+    publishedAt: GraphQLISODateTime!
+    price: GraphQLInt!
+    authorId: ID!
+    author: LibraryAuthor
+    createdAt: GraphQLTimestamp
+    updatedAt: GraphQLTimestamp
+    deletedAt: GraphQLTimestamp
+}
+
+input LibraryCreateBookInput
+{
+    id: ID!
+    title: GraphQLString!
+    publishedAt: GraphQLISODateTime!
+    price: GraphQLInt!
+    authorId: ID!
+}
+
+input LibraryUpdateBookByIdInput
+{
+    id: ID!
+    title: GraphQLString
+    publishedAt: GraphQLISODateTime
+    price: GraphQLInt
+    authorId: ID
+}
+
+input LibraryUpdateBooksInput
+{
+    id: ID
+    title: GraphQLString
+    publishedAt: GraphQLISODateTime
+    price: GraphQLInt
+    authorId: ID
+}
+
+type Query
+{
+    libraryFindBook(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): LibraryBook
+
+    libraryFindBookById(
+        id: ID
+        constraint: QueryStatement
+    ): LibraryBook
+
+    libraryGetBooks(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [LibraryBook]!
+
+    libraryPaginateBooks(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): Pagination!
+
+}
+
+type Mutation
+{
+    libraryCreateBook(
+        payload: LibraryCreateBookInput!
+    ): LibraryBook
+
+    libraryCreateBooks(
+        payload: [LibraryCreateBookInput]!
+    ): Boolean!
+
+    libraryUpdateBookById(
+        payload: LibraryUpdateBookByIdInput!
+        constraint: QueryStatement
+    ): LibraryBook
+
+    libraryUpdateBooks(
+        payload: LibraryUpdateBooksInput!
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [LibraryBook]!
+
+    libraryUpsertBook(
+        payload: LibraryUpdateBookByIdInput!
+    ): LibraryBook
+
+    libraryDeleteBookById(
+        id: ID!
+        constraint: QueryStatement
+    ): LibraryBook
+
+    libraryDeleteBooks(
+        query: QueryStatement
+        constraint: QueryStatement
+    ): [LibraryBook]!
+
+}
