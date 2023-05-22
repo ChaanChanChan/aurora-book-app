@@ -1,6 +1,8 @@
 {
     "admin": "Administración",
     "applications": "Aplicaciones",
+    "authors": "Authors",
+    "books": "Books",
     "example": "Ejemplo",
     "exampleSection": "Sección de ejemplo"
 }

@@ -1,0 +1,154 @@
+<div class="absolute inset-0 overflow-hidden flex flex-col w-full" *transloco="let t">
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-4 sm:px-10 border-b bg-card dark:bg-transparent">
+
+        <div class="flex-1 min-w-0">
+            <au-breadcrumb [data]="breadcrumb"></au-breadcrumb>
+            <au-title>
+                <mat-icon
+                    svgIcon="heroicons_solid:tag"
+                    class="icon-size-8 mr-2"
+                >
+                </mat-icon>
+                {{ t('library.Book') }}
+            </au-title>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex flex-shrink-0 items-center mt-6 sm:mt-0 sm:ml-4">
+            <button
+                *ngIf="currentViewAction.id === 'library::book.detail.edit'"
+                mat-flat-button
+                type="submit"
+                class="ml-3"
+                form="libraryBookFormDetail"
+                color="accent"
+                [disabled]="fg.pristine || ('library::book.detail.update' | getSpinnerFlag | async)"
+            >
+                <mat-icon
+                    *ngIf="!('library::book.detail.update' | getSpinnerFlag | async)"
+                    class="icon-size-5 mr-2"
+                    svgIcon="heroicons_solid:pencil-alt"
+                >
+                </mat-icon>
+                <mat-icon *ngIf="'library::book.detail.update' | getSpinnerFlag | async">
+                    <mat-spinner diameter="20"></mat-spinner>
+                </mat-icon>
+                {{ t('Update') }}
+            </button>
+            <button
+                *ngIf="currentViewAction.id === 'library::book.detail.new'"
+                mat-flat-button
+                type="submit"
+                form="libraryBookFormDetail"
+                class="ml-3"
+                color="accent"
+                [disabled]="fg.pristine || ('library::book.detail.create' | getSpinnerFlag | async)"
+            >
+                <mat-icon
+                    *ngIf="!('library::book.detail.create' | getSpinnerFlag | async)"
+                    class="icon-size-5 mr-2"
+                    svgIcon="heroicons_solid:save"
+                >
+                </mat-icon>
+                <mat-icon *ngIf="'library::book.detail.create' | getSpinnerFlag | async">
+                    <mat-spinner diameter="20"></mat-spinner>
+                </mat-icon>
+                {{ t('Create') }}
+            </button>
+        </div>
+        <!-- / Actions -->
+
+    </div>
+    <!-- / Header -->
+
+    <!-- Main -->
+    <div class="flex-auto pt-6 px-6 sm:pt-10 sm:px-10 overflow-y-auto" cdkScrollable>
+
+        <div class="form-card">
+
+            <form
+                id="libraryBookFormDetail"
+                novalidate
+                [formGroup]="fg"
+                (ngSubmit)="onSubmit($event)"
+            >
+
+                <div class="layout__container">
+
+                    <mat-form-field
+                        appearance="outline"
+                        class="col-6"
+                    >
+                        <mat-label>{{ t('library.Title') }}</mat-label>
+                        <input
+                            matInput
+                            formControlName="title"
+                            maxlength="50"
+                            required
+                        >
+                        <mat-error>{{ formErrors?.title | async }}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field
+                        appearance="outline"
+                        class="au-datepicker col-4"
+                    >
+                        <mat-label>{{ t('library.PublishedAt') }}</mat-label>
+                        <input
+                            matInput
+                            autocomplete="off"
+                            formControlName="publishedAt"
+                            [auDatepickerSqlFormat]
+                            [matDatepicker]="publishedAtPicker"
+                        >
+                        <mat-datepicker-toggle
+                            matSuffix
+                            [for]="publishedAtPicker"
+                        >
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #publishedAtPicker>
+                        </mat-datepicker>
+                        <mat-error>{{ formErrors?.publishedAt | async }}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field
+                        appearance="outline"
+                        class="col-2"
+                    >
+                        <mat-label>{{ t('library.Price') }}</mat-label>
+                        <input
+                            matInput
+                            formControlName="price"
+                            type="number"
+                            maxlength="10"
+                        >
+                        <mat-error>{{ formErrors?.price | async }}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field
+                        appearance="outline"
+                        class="col-6"
+                    >
+                        <mat-label>{{ t('library.AuthorId') }}</mat-label>
+                        <mat-select
+                            formControlName="authorId"
+                        >
+                            <mat-option
+                                *ngFor="let author of authors$ | async"
+                                [value]="author.id"
+                            >
+                                {{ author.name }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error>{{ formErrors?.authorId | async }}</mat-error>
+                    </mat-form-field>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!-- / Main -->
+
+</div>

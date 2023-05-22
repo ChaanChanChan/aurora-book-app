@@ -1,0 +1,69 @@
+{
+    "version": "0.0.1",
+    "files": [
+        {
+            "path": "src/assets/i18n/library/en.json",
+            "integrity": "sha1:0b56d40c0630a74abec5398e01c6cd83263feddc"
+        },
+        {
+            "path": "src/assets/i18n/library/es.json",
+            "integrity": "sha1:0b56d40c0630a74abec5398e01c6cd83263feddc"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/library.component.html",
+            "integrity": "sha1:a6aab421500581830708e34385e2166e7a039ba7"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/library.component.ts",
+            "integrity": "sha1:605401e0d73d25feb25280ff218b65050ff36028"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/library.module.ts",
+            "integrity": "sha1:008e5a41773ddb789a72c6ab38fe1303fc23ec70"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/library.navigation.ts",
+            "integrity": "sha1:8a4736c9c7c1103179ec7ba4ed62a0f7a2c3ba79"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/library.routing.ts",
+            "integrity": "sha1:8a97dcec5fb8a225432f9f612e097a66c5b4f198"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/library.types.ts",
+            "integrity": "sha1:da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author-detail.component.html",
+            "integrity": "sha1:a60cea51919ccfd012972e208eb7fde5543f52e0"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author-detail.component.ts",
+            "integrity": "sha1:bef861143e3065b59d96046dbc023dc567f243f9"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author-list.component.html",
+            "integrity": "sha1:997ca037b13f8cb9e013d3cfda28fa8f36060f76"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author-list.component.ts",
+            "integrity": "sha1:adfbefb94d532780110902521d65944bf3370302"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author.columns-config.ts",
+            "integrity": "sha1:6d2881f7593a25475acfc263509c433bfe3842dc"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author.graphql.ts",
+            "integrity": "sha1:0cb10a2def2f1d4fd129c10d7c8b01638fa321ac"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author.resolvers.ts",
+            "integrity": "sha1:ce06faa1f05e89b45541182761e13883659da5dd"
+        },
+        {
+            "path": "src/app/modules/admin/apps/library/author/author.service.ts",
+            "integrity": "sha1:9f4fd73f2a6a33f2b99d4e0dfd2a70770375467c"
+        }
+    ]
+}

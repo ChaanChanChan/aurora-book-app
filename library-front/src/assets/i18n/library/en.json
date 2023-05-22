@@ -1,0 +1,11 @@
+{
+    "Author": "Author",
+    "AuthorId": "AuthorId",
+    "Authors": "Authors",
+    "Book": "Book",
+    "Books": "Books",
+    "Name": "Name",
+    "Price": "Price",
+    "PublishedAt": "PublishedAt",
+    "Title": "Title"
+}

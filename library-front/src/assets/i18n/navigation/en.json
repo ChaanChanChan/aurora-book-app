@@ -1,6 +1,8 @@
 {
     "admin": "Admin",
     "applications": "Applications",
+    "authors": "Authors",
+    "books": "Books",
     "example": "Example",
     "exampleSection": "Example Section"
 }
